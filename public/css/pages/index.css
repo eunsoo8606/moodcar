@@ -1847,6 +1847,36 @@
   .compare-card.info-card {
     padding: 35px 20px;
   }
+
+  /* 모바일 고정바 2개 버튼 분할 레이아웃 및 닫기 버튼 삭제 */
+  .sticky-quote-bar {
+    padding: 10px 14px !important;
+  }
+  .sticky-mobile-action {
+    display: flex !important;
+    gap: 8px;
+    width: 100%;
+  }
+  .btn-sticky-mobile-trigger {
+    flex: 1;
+    margin: 0 !important;
+    padding: 12px 6px !important;
+    font-size: 0.82rem !important;
+    white-space: nowrap;
+    border-radius: 20px !important;
+  }
+  .btn-mobile-quote {
+    background: var(--accent-gradient) !important;
+    color: #ffffff !important;
+  }
+  .btn-mobile-call {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+    color: #000000 !important;
+    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2) !important;
+  }
+  .btn-sticky-close {
+    display: none !important; /* 모바일에서 닫기 버튼 완전 제거 */
+  }
 }
 
 /* ==========================================

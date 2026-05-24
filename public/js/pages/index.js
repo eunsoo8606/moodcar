@@ -116,10 +116,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // 6. 하단 고정바 모바일 트리거 스크롤 포커스
-  const mobileTrigger = document.querySelector('.btn-sticky-mobile-trigger');
-  if (mobileTrigger) {
-    mobileTrigger.addEventListener('click', (e) => {
+  // 6. 스크롤 포커스 이벤트 바인딩 (모바일 견적 문의 및 상담접수 버튼)
+  const focusTargets = document.querySelectorAll('#btnLiveAction, .btn-mobile-quote');
+  focusTargets.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
       e.preventDefault();
       // 히어로 섹션 폼 영역으로 스무스 스크롤
       const targetForm = document.querySelector('.hero-form-area');
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
     });
-  }
+  });
 });
 
 // ==========================================

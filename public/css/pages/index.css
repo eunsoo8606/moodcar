@@ -1760,24 +1760,50 @@
 }
 
 @media (max-width: 768px) {
+  /* 모바일 공통 섹션 패딩 축소로 짜임새 확보 */
+  .hero-section,
+  .features-section,
+  .difference-section,
+  .gallery-section,
+  .compare-section,
+  .process-section,
+  .live-status-section,
+  .cta-section {
+    padding: 60px 16px !important;
+  }
+
+  .hero-section {
+    padding-top: 100px !important; /* 헤더 고정 높이 감안 */
+    min-height: auto;
+  }
+  
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.1rem;
+    line-height: 1.3;
   }
   
   .hero-subtitle {
-    font-size: 1.05rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .h-feature-item {
+    font-size: 0.95rem;
+    text-align: left;
   }
   
   .highlight-bar-container {
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
   }
   
   .hl-item {
     width: 100%;
     border-right: none !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 15px;
+    padding-bottom: 12px;
+    justify-content: flex-start;
   }
   
   .hl-item:last-child {
@@ -1790,12 +1816,36 @@
     gap: 20px;
   }
   
+  .feature-card {
+    padding: 35px 24px;
+  }
+  
   .cta-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* 모바일 비교 리포트 카드 간 여백 추가 */
+  .compare-row {
+    margin-bottom: 20px;
+  }
+  .compare-card {
+    min-height: auto;
+  }
+  .compare-card.info-card {
+    padding: 35px 20px;
   }
 }
 

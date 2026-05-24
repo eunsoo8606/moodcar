@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    <%= typeof title !=='undefined' ? title : '무드카 (Moodcar)' %>
+  </title>
+
+  <!-- SEO 최적화 메타데이터 -->
+  <meta name="description"
+    content="중고차 팔 때 내 차 값이 달라집니다! 중고차 해외 직수출 전문 브랜드 무드카(Moodcar) 공식 랜딩페이지입니다. 연식, 주행거리, 사고차 상관없이 최고가 매입.">
+  <meta name="keywords" content="무드카, 중고차수출, 중고차해외수출, 중고차직수출, 중고차최고가매입, 폐차대행">
+  <meta property="og:title" content="<%= typeof title !== 'undefined' ? title : '무드카' %>">
+  <meta property="og:description" content="연식, 주행거리, 사고이력 상관없이 최대 300만원 더! 중고차 해외 수출 전문 무드카">
+  <meta property="og:type" content="website">
+
+  <!-- 프리미엄 서체 로드 (Outfit & Noto Sans KR) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Outfit:wght@300;400;600;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 공통 스타일 (디자인 시스템 토큰 포함) -->
+  <link rel="stylesheet" href="/css/common.css">
+
+  <!-- 페이지별 독립 CSS 동적 로드 -->
+  <% if (typeof pageCss !=='undefined' && pageCss) { %>
+    <link rel="stylesheet" href="/css/pages/<%= pageCss %>.css">
+    <% } %>
+  <!-- Font Awesome 6.4.0 웹 아이콘 CDN (절대 깨지지 않는 글로벌 표준) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Swiper Slider CSS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+  <!-- 글로벌 네비게이션 헤더 -->
+  <header id="global-header" class="header">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/images/logo/logo2.png" alt="Moodcar Logo" class="logo-img">
+      </a>
+      <nav class="nav-menu">
+        <a href="#features" class="nav-link">수출 장점</a>
+        <a href="#gallery" class="nav-link">수출 현황</a>
+        <a href="#process" class="nav-link">수출 절차</a>
+        <a href="#order" class="nav-btn">1분 견적 조회</a>
+      </nav>
+    </div>
+  </header>
+  <main class="main-content">

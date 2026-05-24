@@ -1,0 +1,857 @@
+<%- include('../partials/header') %>
+
+  <!-- 히어로 섹션 (소개 및 폼 고정, 뒷배경 Swiper 페이드 슬라이더 전환) -->
+  <section class="hero-section">
+    <!-- 뒷배경 전용 Swiper 슬라이더 -->
+    <div class="hero-bg-swiper swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background-image: url('/images/background/hero-bg.png');"></div>
+        <div class="swiper-slide" style="background-image: url('/images/background/hero-bg-2.png');"></div>
+        <div class="swiper-slide" style="background-image: url('/images/background/hero-bg-3.png');"></div>
+      </div>
+    </div>
+
+    <div class="hero-bg-overlay"></div>
+
+    <div class="hero-container">
+      <div class="hero-grid">
+        <!-- 좌측 소개란 (고정 복원) -->
+        <div class="hero-text-area">
+          <span class="hero-badge">USED CAR GLOBAL EXPORT</span>
+          <h1 class="hero-title">수출로 팔면,<br>내 차 값이 <span class="gradient-text">달라집니다</span></h1>
+          <p class="hero-subtitle">키로수가 높아서, 연식이 오래돼서 감가 걱정이셨나요?<br>내수 딜러 견적 대비 <strong>최대 300만 원 더 높은</strong> 해외 직수출
+            시세를 확인하세요.</p>
+
+          <div class="hero-features-list">
+            <div class="h-feature-item"><span class="h-feature-icon"><i class="fa-solid fa-chart-line"></i></span>
+              주행거리(키로수)가 많아도 감가 없는 해외 수출 매입</div>
+            <div class="h-feature-item"><span class="h-feature-icon"><i class="fa-solid fa-clock"></i></span> 서류 접수부터 구청
+              말소 등록까지 당일 100% 원스톱 처리</div>
+            <div class="h-feature-item"><span class="h-feature-icon"><i class="fa-solid fa-map-location-dot"></i></span>
+              전국 어디나 감가 없는 무료 방문 출장 견적 서비스</div>
+          </div>
+        </div>
+
+        <!-- 우측 견적 및 무료 상담 신청 폼 -->
+        <div class="hero-form-area">
+          <div class="form-wrapper">
+            <div class="form-header">
+              <h3>중고차 수출 무료 상담</h3>
+              <p>1분 만에 끝나는 내 차 수출 시세 조회</p>
+            </div>
+            <form onsubmit="alert('상담 신청이 접수되었습니다. 무드카 중고차 수출 전문 감정사가 신속하게 연락드리겠습니다.'); return false;"
+              class="quote-form">
+              <div class="form-group">
+                <label for="car-model">차량명 <span class="required">*</span></label>
+                <input type="text" id="car-model" name="carModel" placeholder="ex) 아반떼 AD, 쏘렌토 R, 스포티지" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">연락처 <span class="required">*</span></label>
+                <div class="phone-inputs">
+                  <input type="tel" name="phone1" value="010" maxlength="3" required>
+                  <span>-</span>
+                  <input type="tel" name="phone2" placeholder="0000" maxlength="4" required>
+                  <span>-</span>
+                  <input type="tel" name="phone3" placeholder="0000" maxlength="4" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="mileage">주행거리 (키로수) <span class="required">*</span></label>
+                <select id="mileage" name="mileage" required>
+                  <option value="" disabled selected>주행거리를 선택하세요</option>
+                  <option value="under-10">10만 km 이하</option>
+                  <option value="10-20">10만 ~ 20만 km</option>
+                  <option value="over-20">20만 km 이상 (수출 강력 추천)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-year">차량 연식</label>
+                <input type="text" id="car-year" name="carYear" placeholder="ex) 2015년식">
+              </div>
+
+              <div class="form-agreement">
+                <label class="agreement-label">
+                  <input type="checkbox" name="agree" checked required>
+                  <span>개인정보 수집 및 이용 동의 (필수)</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn-form-submit">
+                <span>1분 만에 내 차 견적 확인 Click <i class="fa-solid fa-angle-right"></i></span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 혜택 하이라이트 띠 바 (레퍼런스 스타일 - 이모지를 XEIcon으로 변경) -->
+  <section class="highlight-bar-section">
+    <div class="highlight-bar-container">
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-phone"></i></span>
+        <span class="hl-text">상담부터 견적까지<br><strong>무료 상담 / 무료 출장</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-car"></i></span>
+        <span class="hl-text">주행거리가 많아도<br><strong>키로수 높아도 무조건 OK</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-wrench"></i></span>
+        <span class="hl-text">폐차급 노후 차량도<br><strong>연식 오래되고 사고나도 OK</strong></span>
+      </div>
+      <div class="hl-item">
+        <span class="hl-icon"><i class="fa-solid fa-shield-halved"></i></span>
+        <span class="hl-text">안전하고 투명한 결제<br><strong>최고가 매입 / 안전한 거래</strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 장점 섹션 -->
+  <section id="features" class="features-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">내수 판매보다 수출이 유리한 이유</h2>
+        <p class="section-subtitle">국내 시장에서는 감가 폭탄을 맞는 노후 중고차도, 해외 바이어 직수출을 통해 가치를 제대로 보상받을 수 있습니다.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- 장점 1 -->
+        <div class="feature-card">
+          <div class="feature-icon">📉</div>
+          <h3 class="feature-title">연식 및 주행거리 감가 Zero</h3>
+          <p class="feature-desc">주행거리가 20~30만 km 이상이거나 연식이 오래되어 내수 딜러들이 매입을 거부하거나 폐차 수준의 감가를 제안한 차량도 정상 가격으로 매입합니다.</p>
+        </div>
+        <!-- 장점 2 -->
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">해외 직수출 다이렉트 채널</h3>
+          <p class="feature-desc">중간 딜러 거품 없이 중동, 남미, 아프리카 등 30여 개국 현지 바이어 네트워크와 다이렉트로 협약되어 있어 압도적인 매입 단가를 제시합니다.</p>
+        </div>
+        <!-- 장점 3 -->
+        <div class="feature-card">
+          <div class="feature-icon">📄</div>
+          <h3 class="feature-title">깔끔한 당일 신속 말소 처리</h3>
+          <p class="feature-desc">차량 인도 즉시 대금을 송금해 드리며, 서류 대행 및 구청 말소 업무를 당일에 신속 완료하여 세금 및 보험 문제를 완전히 정리해 드립니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 무드카만의 프리미엄 차별점 섹션 (비대칭 타이포그래피 스플릿 레이아웃) -->
+  <section id="difference" class="difference-section">
+    <div class="section-container">
+      <div class="diff-split-grid">
+        <!-- 좌측: 고정 브랜드 메시지 및 네온 아우라 -->
+        <div class="diff-left-area">
+          <span class="diff-tag">TRUST & VALUE</span>
+          <h2 class="diff-main-title">무드카중고차수출은<br>무엇이 다를까요?</h2>
+          <p class="diff-main-subtitle">단순히 차량을 매입하는 것을 넘어, 고객님의 소중한 자산 가치를 극대화하고 투명하고 부당함 없는 안심 거래를 보장하는 무드카만의 3대 신뢰 약속입니다.</p>
+          <div class="diff-neon-aura"></div>
+        </div>
+        
+        <!-- 우측: 번호 중심의 미니멀 라인 리스트 -->
+        <div class="diff-right-area">
+          <div class="diff-list">
+            <!-- 차별점 1 -->
+            <div class="diff-list-item">
+              <span class="diff-item-num">01</span>
+              <div class="diff-item-content">
+                <div class="diff-item-header">
+                  <span class="diff-item-icon"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+                  <h3 class="diff-item-title">정확한 최고가 제시</h3>
+                </div>
+                <p class="diff-item-desc">무드카중고차수출은 해외 각국 지사들을 통해 입찰경쟁 방식으로 최고가만 연결해 드리겠습니다. 타사견적과 비교하시면 느끼실 수 있습니다.</p>
+              </div>
+            </div>
+            
+            <!-- 차별점 2 -->
+            <div class="diff-list-item">
+              <span class="diff-item-num">02</span>
+              <div class="diff-item-content">
+                <div class="diff-item-header">
+                  <span class="diff-item-icon"><i class="fa-regular fa-lightbulb"></i></span>
+                  <h3 class="diff-item-title">부당감가 없는 거래</h3>
+                </div>
+                <p class="diff-item-desc">부당감가는 절대 없는 시스템으로 늘 고객의 입장에서 신뢰할 수 있는 수출 거래 정착을 위해 항상 노력해왔습니다.</p>
+              </div>
+            </div>
+            
+            <!-- 차별점 3 -->
+            <div class="diff-list-item">
+              <span class="diff-item-num">03</span>
+              <div class="diff-item-content">
+                <div class="diff-item-header">
+                  <span class="diff-item-icon"><i class="fa-solid fa-user-shield"></i></span>
+                  <h3 class="diff-item-title">합리적인 서비스 제공</h3>
+                </div>
+                <p class="diff-item-desc">소중한 고객님의 차를 합리적인 가격에 판매하실 수 있게 무드카중고차수출이 도와드리겠습니다. 무드카만의 오랜 노하우와 경험을 바탕으로 합리적인 서비스를 제공하겠습니다.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 시세 비교 리포트 섹션 -->
+  <section id="compare" class="compare-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">내수 대비 압도적인 수출 매입가 비교</h2>
+        <p class="section-subtitle">주행거리가 길고 사고 이력이 있어도, 수출 시장에서는 최고의 가치로 매입합니다.</p>
+      </div>
+
+      <div class="compare-rows">
+        <!-- 첫 번째 행: 주행거리 비교 (좌 그래프 / 우 설명&이미지) -->
+        <div class="compare-row">
+          <!-- 좌: 그래프 카드 -->
+          <div class="compare-card graph-card">
+            <div class="card-inner">
+              <div class="compare-badge-wrapper">
+                <span class="compare-badge">자동차 주행거리 15만 km 기준</span>
+              </div>
+              <h3 class="compare-price-title">평균 <span class="highlight-green-under">200만원</span> 이상 UP!</h3>
+              <p class="compare-price-subtitle">중고차수출 주행거리는 큰 감가요인이 아닙니다.</p>
+
+              <div class="graph-container">
+                <div class="graph-grid-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="graph-bars">
+                  <!-- 국내 매입가격 바 -->
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top">(평균시세)<br>550~600만원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-korea" data-height="70"></div>
+                    </div>
+                    <div class="bar-label-bottom">국내 매입가격</div>
+                  </div>
+                  <!-- 수출 매입가격 바 -->
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top highlight-price">800만원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-export" data-height="100"></div>
+                    </div>
+                    <div class="bar-label-bottom highlight-price-bottom">수출 매입가격</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 우: 다크 설명 & 대시보드 이미지 카드 -->
+          <div class="compare-card info-card dark-theme">
+            <div class="image-overlay-bg" style="background-image: url('/images/background/live-dashboard.png');"></div>
+            <div class="card-gradient-overlay"></div>
+            <div class="card-content">
+              <h3 class="info-title">중고차수출 매입가<br>평균 <span class="highlight-yellow">200만원 이상 UP!</span></h3>
+              <p class="info-desc">
+                수출 시장에서는 주행거리가 주요 감가 요인이 되지 않습니다. 오히려 차량의 내구성, 엔진 상태, 그리고 해당 모델의 글로벌 수요가 더 중요한 요소로 작용합니다.<br><br>
+                <strong>"주행거리 때문에 걱정하지 마세요! 차량 모델과 상태만 좋다면 수출 시장에서는 여전히 높은 가치를 평가받습니다."</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 두 번째 행: 사고이력 비교 (좌 설명&이미지 / 우 그래프) -->
+        <div class="compare-row reverse">
+          <!-- 좌: 다크 설명 & 사고 이미지 카드 -->
+          <div class="compare-card info-card dark-theme">
+            <div class="image-overlay-bg" style="background-image: url('/images/background/car-accident.png');"></div>
+            <div class="card-gradient-overlay"></div>
+            <div class="card-content">
+              <h3 class="info-title">중고차수출 시<br><span class="highlight-yellow">사고이력은 상관없다!</span></h3>
+              <p class="info-desc">
+                중고차를 수출할 때에는 국내 매입가와는 다른 기준으로 중고차의 가치가 산정됩니다. 사고 이력보다 차량의 사용 가능성과 부품 활용성을 중요하게 보고 있습니다.<br><br>
+                <strong>무드카중고차수출</strong>은 수출 시장에서 차량의 가치를 정직하게 평가하여 사고 차량도 수출로 더 높은 가치를 찾아드리겠습니다.
+              </p>
+            </div>
+          </div>
+
+          <!-- 우: 그래프 카드 -->
+          <div class="compare-card graph-card">
+            <div class="card-inner">
+              <div class="compare-badge-wrapper">
+                <span class="compare-badge">자동차 사고이력 기준</span>
+              </div>
+              <h3 class="compare-price-title">웬만해선 <span class="highlight-italic">감가없음!</span></h3>
+              <p class="compare-price-subtitle">중고차수출 사고내역은 큰 감가요인이 아닙니다.</p>
+
+              <div class="graph-container">
+                <div class="graph-grid-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <div class="graph-bars">
+                  <!-- 국내 매입가격 바 -->
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top">(평균시세)<br>520만원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-korea" data-height="65"></div>
+                    </div>
+                    <div class="bar-label-bottom">국내 매입가격</div>
+                  </div>
+                  <!-- 수출 매입가격 바 -->
+                  <div class="bar-wrapper">
+                    <div class="bar-label-top highlight-price">800만원</div>
+                    <div class="graph-bar-bg">
+                      <div class="graph-bar bar-export" data-height="100"></div>
+                    </div>
+                    <div class="bar-label-bottom highlight-price-bottom">수출 매입가격</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- 수출 완료 현황 섹션 -->
+  <section id="gallery" class="gallery-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">최근 무드카 실시간 수출 현황</h2>
+        <p class="section-subtitle">실제 고객님들께서 폐차 대안이나 내수 딜러 감가를 피해 무드카로 수출 진행한 차량들입니다.</p>
+      </div>
+
+      <!-- Swiper 슬라이더 컨테이너 -->
+      <div class="gallery-slider-outer">
+        <div class="swiper gallery-swiper">
+          <div class="swiper-wrapper">
+            <!-- 갤러리 아이템 1: K5 -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_13.jpg');">
+                <span class="badge-status text-teal">실시간 매입</span>
+                <span class="badge-country">🇱🇾 리비아 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">기아 K5 1.7 디젤 1세대</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2011년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 21만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 엔진/미션 양호</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>내수 딜러가 대비 <strong class="price-up">+180만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 갤러리 아이템 2: 투싼 ix -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_06.jpg');">
+                <span class="badge-status text-orange">인기 차종</span>
+                <span class="badge-country">🇨🇱 칠레 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">현대 투싼 ix LMX20</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2010년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 26만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 하부 부식 양호</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>폐차 처분 대비 <strong class="price-up">+210만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 갤러리 아이템 3: 그랜저 TG -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_10.jpg');">
+                <span class="badge-status text-teal">최고가 낙찰</span>
+                <span class="badge-country">🇯🇴 요르단 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">현대 그랜저 TG 뉴 럭셔리</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2009년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 18만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 외관 흠집 감가無</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>내수 딜러가 대비 <strong class="price-up">+150만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 갤러리 아이템 4: SM5 임프레션 -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_14.jpg');">
+                <span class="badge-status text-purple">무감가 인수</span>
+                <span class="badge-country">🇾🇪 예멘 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">르노삼성 SM5 임프레션</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2008년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 28만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 연식 무관 매입</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>일반 폐차비 대비 <strong class="price-up">+120만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 갤러리 아이템 5: 스포티지 R -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_09.jpg');">
+                <span class="badge-status text-teal">추천 수출</span>
+                <span class="badge-country">🇰🇭 캄보디아 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">기아 스포티지 R TLX</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2012년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 23만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 디젤 매연 무관</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>내수 딜러가 대비 <strong class="price-up">+240만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- 갤러리 아이템 6: 싼타페 CM -->
+            <div class="swiper-slide gallery-item">
+              <div class="gallery-image-box"
+                style="background-image: url('/images/KakaoTalk_20260523_133405053_07.jpg');">
+                <span class="badge-status text-orange">키로수 무관</span>
+                <span class="badge-country">🇭🇳 온두라스 수출 완료</span>
+              </div>
+              <div class="gallery-info">
+                <h4 class="gallery-item-title">현대 싼타페 더 스타일 MLX</h4>
+                <div class="gallery-spec-grid">
+                  <div class="spec-item"><i class="fa-regular fa-calendar-days"></i> 2010년식</div>
+                  <div class="spec-item"><i class="fa-solid fa-gauge-high"></i> 31만 km</div>
+                  <div class="spec-item"><i class="fa-regular fa-circle-check"></i> 엔진 보링 무관</div>
+                  <div class="spec-item"><i class="fa-solid fa-shield"></i> 당일 말소 완료</div>
+                </div>
+                <div class="gallery-price-bar">
+                  <span>폐차 처분 대비 <strong class="price-up">+220만 원</strong> 이득!</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 슬라이더 컨트롤러 (디자인 WOW 요소) -->
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 수출 진행 절차 섹션 (최신 트랜드 타임라인 스타일) -->
+  <section id="process" class="process-section">
+    <div class="section-container">
+      <div class="section-header">
+        <h2 class="section-title">간편하고 빠른 3단계 수출 절차</h2>
+        <p class="section-subtitle">전화 한 통 또는 온라인 신청 한 번으로 차량 평가부터 대금 지급, 말소 등록까지 완벽히 대행합니다.</p>
+      </div>
+
+      <div class="process-timeline-outer">
+        <!-- 단계를 연결해주는 가로/세로 네온 타임라인 라인 -->
+        <div class="timeline-connect-line"></div>
+
+        <div class="process-grid">
+          <!-- 1단계 -->
+          <div class="process-card">
+            <div class="card-glow-bg"></div>
+            <span class="process-num">01</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-regular fa-file-lines"></i></div>
+              <h3 class="process-card-title">수출 견적 신청</h3>
+              <p class="process-card-desc">간편 신청 폼 또는 전화상담을 통해 차량 종류와 기본 스펙을 바탕으로 1차 예상 견적을 상담받습니다.</p>
+            </div>
+          </div>
+          <!-- 2단계 -->
+          <div class="process-card">
+            <div class="card-glow-bg"></div>
+            <span class="process-num">02</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <h3 class="process-card-title">무료 방문 실차 확인</h3>
+              <p class="process-card-desc">고객님이 계신 전국 어디든 무드카 전문 평가사가 직접 찾아가 실차 상태를 정밀 진단 후 최종 견적을 책정합니다.</p>
+            </div>
+          </div>
+          <!-- 3단계 -->
+          <div class="process-card">
+            <div class="card-glow-bg"></div>
+            <span class="process-num">03</span>
+            <div class="process-card-content">
+              <div class="process-icon-box"><i class="fa-solid fa-building-columns"></i></div>
+              <h3 class="process-card-title">대금 송금 및 당일 말소</h3>
+              <p class="process-card-desc">현장에서 계약 즉시 대금을 전액 송금하고, 차량 탁송 후 구청을 통해 당일 원스톱으로 말소처리를 매듭짓습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 실시간 상담 현황 섹션 (좌우 반전, 2열 교차 롤링 및 글래스모피즘 구조) -->
+  <section class="live-status-section">
+    <div class="live-status-overlay"></div>
+    <div class="live-status-container">
+
+      <!-- 좌측: 글래스모피즘 2열 교차 무한 롤러 피드보드 -->
+      <div class="live-feed-column">
+        <div class="live-feed-header">
+          <span class="live-pulse"></span>
+          <h3>실시간 차량 상담 접수 현황</h3>
+        </div>
+
+        <div class="live-feed-grid">
+          <!-- Track 1: 위로 스크롤 (Up Track) -->
+          <div class="live-feed-box">
+            <div class="live-feed-track track-up">
+              <!-- 1 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">KG모빌리티 토레스 22년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 2 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">기아 K8 21년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 3 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">기아 레이 19년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 4 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 싼타페 TM 18년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 5 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">제네시스 G80 20년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+
+              <!-- 무한 루프 스크롤을 위한 복제 데이터 세트 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">KG모빌리티 토레스 22년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">기아 K8 21년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Track 2: 아래로 스크롤 (Down Track) -->
+          <div class="live-feed-box">
+            <div class="live-feed-track track-down">
+              <!-- 1 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">아우디 A6 18년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 2 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 그랜저 IG 16년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 3 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 코나 21년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 4 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">BMW 5시리즈 19년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <!-- 5 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">르노 XM3 20년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+
+              <!-- 무한 루프 스크롤을 위한 복제 데이터 세트 -->
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">아우디 A6 18년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+              <div class="live-item-card">
+                <span class="live-car-icon"><i class="fa-solid fa-car-side"></i></span>
+                <div class="live-item-info">
+                  <span class="live-car-name">현대 그랜저 IG 16년식 상담</span>
+                  <span class="live-time-ago">05.25</span>
+                </div>
+                <span class="live-status-badge text-teal">상담완료</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 우측: 모던 슬로건 및 상담 유도 -->
+      <div class="live-slogan-column">
+        <span class="live-badge-top"><i class="fa-solid fa-circle-play"></i> LIVE STATUS</span>
+        <h2 class="live-title">이 순간에도<br><span class="highlight-text">상담 진행 중</span></h2>
+        <p class="live-desc">전국의 많은 고객님들께서 지금 이 순간에도 무드카를 통해 감가 없는 최상의 직수출 견적을 실시간 상담받고 계십니다.<br>더 고민하지 마시고 지금 바로 검증된 해외
+          직수출 시세를 알아보세요.</p>
+
+        <div class="live-btn-group">
+          <a href="#global-header" class="btn-live-action"><span>지금 바로 상담 접수하기 <i
+                class="fa-solid fa-chevron-right"></i></span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA / 주문 유도 섹션 -->
+  <section id="order" class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-title">지금 내 차량의 수출 시세를 조회하세요</h2>
+      <p class="cta-subtitle">주행거리가 많아서, 감가가 커서 고민할 필요 없습니다. 감정사와 1:1 채팅 또는 무료 전화 상담도 지원합니다.</p>
+      <a href="#global-header" class="btn-primary btn-large">무료 견적 실시간 신청하기</a>
+    </div>
+  </section>
+
+  <!-- 하단 고정 견적 문의바 (Sticky Bottom Bar) -->
+  <div class="sticky-quote-bar" id="stickyQuoteBar">
+    <div class="sticky-bar-container">
+      <!-- 데스크톱용 인라인 폼 (차량명, 연락처 수집) -->
+      <form class="sticky-form" id="stickyQuoteForm" onsubmit="handleStickyFormSubmit(event)">
+        <div class="sticky-form-content">
+          <div class="sticky-title">
+            <span class="pulse-live"></span>
+            <strong>실시간</strong> 수출견적
+          </div>
+          <div class="sticky-input-group">
+            <input type="text" id="sticky-car-model" name="carModel" placeholder="차량명 입력 (ex. 아반떼 AD)" required>
+            <input type="tel" id="sticky-phone" name="phone" placeholder="연락처 입력 (ex. 010-0000-0000)" required>
+          </div>
+          <div class="sticky-agreement">
+            <label class="sticky-checkbox-label">
+              <input type="checkbox" id="sticky-agree" name="agree" checked required>
+              <span>개인정보 제공 동의</span>
+            </label>
+            <button type="button" class="btn-policy-modal-open" onclick="openPolicyModal()">[자세히]</button>
+          </div>
+          <button type="submit" class="btn-sticky-submit">
+            <span>무료 견적 신청 <i class="fa-solid fa-paper-plane"></i></span>
+          </button>
+        </div>
+      </form>
+
+      <!-- 모바일 전용 단순화 플로팅 원버튼 (클릭 시 상단 폼으로 유도) -->
+      <div class="sticky-mobile-action">
+        <a href="#global-header" class="btn-sticky-mobile-trigger">
+          <span>⚡ 1분 만에 내 차 수출 시세 조회하기 <i class="fa-solid fa-chevron-right"></i></span>
+        </a>
+      </div>
+
+      <!-- 고정바 닫기 버튼 -->
+      <button type="button" class="btn-sticky-close" onclick="closeStickyBar()" aria-label="닫기">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- 개인정보처리방침 팝업 모달 -->
+  <div class="policy-modal" id="policyModal" role="dialog" aria-modal="true">
+    <div class="policy-modal-overlay" onclick="closePolicyModal()"></div>
+    <div class="policy-modal-wrapper">
+      <div class="policy-modal-header">
+        <h3>개인정보처리방침</h3>
+        <button type="button" class="btn-modal-close" onclick="closePolicyModal()"><i
+            class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="policy-modal-body">
+        <div class="policy-text-content">
+          <h4>개인정보처리방침 동의</h4>
+          <p>정보통신망이용촉진및정보보호등에관한법률(이하 “정보통신망법”) 등 정보통신서비스제공자가 준수하여야 할 관련 법령상의 개인정보보호 규정을 준수하며, 관련 법령에 의거한 개인정보취급방침을 정하여
+            이용자 권익 보호에 최선을 다하고 있습니다.</p>
+
+          <h5>제 1 장 개인정보의 수집 및 이용 목적</h5>
+          <p>개인정보는 생존하는 개인에 관한 정보로서 실명, 주민등록번호 등의 사항으로 회원 개인을 식별할 수 있는 정보(당해 정보만으로는 특정 개인을 식별할 수 없더라도 다른 정보와 용이하게 결합하여
+            식별할 수 있는 것을 포함)를 말합니다. 회사가 수집한 개인정보는 다음의 목적을 위해 활용합니다.</p>
+          <p>1. 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 요금정산: 콘텐츠 제공, 물품배송 또는 청구서 등 발송, 본인 인증 및 구매, 요금 결재, 요금추심</p>
+          <p>2. 회원 관리: 회원제 서비스 이용에 따른 본인 확인, 개인식별, 불량회원의 부정 이용 방지와 비인가 사용 방지, 가입 의사 확인, 가입 및 가입횟수 제한, 만14세 미만 아동 개인 정보
+            수집 시 법정 대리인 동의여부 확인, 추후 법정 대리인 본인확인, 분쟁 조정을 위한 기록보존, 불만처리 등 민원처리, 고지사항 전달</p>
+          <p>3. 마케팅 및 광고에 활용: 신규 서비스(제품) 개발 및 특화, 인구통계학적 특성에 따른 서비스 제공 및 광고게재, 접속 빈도 파악, 회원의 서비스 이용에 대한 통계, 이벤트 등 광고성 정보
+            전달 (회원님의 개인정보는 광고를 의뢰한 개인이나 단체에는 제공되지 않습니다.)</p>
+
+          <h5>제 2 장 수집하는 개인정보 항목 및 수집방법</h5>
+          <p><strong>[ 수집하는 개인정보 항목 ]</strong></p>
+          <p>1. 최초 회원가입 시 회원식별 및 최적화 된 서비스 제공을 위해 아래와 같은 정보를 수집합니다.<br>
+            – 필수항목: 아이디, 비밀번호, 이름/기업명, 담당자명(기업회원의 경우), 이메일주소, 주소, 전화번호, 휴대전화번호, 만14세 미만인 경우 법정대리인 정보<br>
+            – 선택항목: 팩스번호, 영문명/영문 주소(도메인관리 규정상의 필수 정보 확보), 이용자의 휴대폰 주소록내의 제3자의 전화번호 (모바일 이용시), 기기고유번호(모바일이용시 디바이스 아이디 또는
+            IMEI)<br>
+            – 유료 정보 및 서비스 이용에 따른 결제수단: 은행정보, 신용카드 정보</p>
+          <p>2. 서비스 이용과정이나 사업 처리과정에서 아래와 같은 정보들이 생성되어 수집될 수 있습니다.<br>
+            – 서비스 이용기록, 접속로그, 쿠키, 접속IP 정보, 결제기록, 불량이용 기록, 이용자 상태정보, 사진, 방문 일시, 성별, 생년월일, 직업, 회사명</p>
+          <p><strong>[ 수집방법 ]</strong></p>
+          <p>회사는 다음과 같은 방법으로 개인정보를 수집합니다.<br>
+            1. 홈페이지를 통한 회원가입, 상담 게시판, 경품 행사응모, 배송 요청<br>
+            2. 생성정보 수집 툴을 통한 수집<br>
+            3. 서비스 사용 중 이용자의 자발적 제공을 통한 수집</p>
+
+          <h5>제 3 장 수집한 개인정보의 보유 및 이용기간</h5>
+          <p>원칙적으로 개인정보 수집 및 이용 목적이 달성된 후에는 해당 정보를 지체없이 파기합니다. 단, 다음의 정보에 대해서는 아래의 이유로 명시한 기간동안 보존합니다.</p>
+          <p>1. 회원탈퇴 시 보존 개인정보<br>
+            – 보존항목: 회원님께서 제공한 이름, 아이디, 이메일주소, 주소, 전화번호 등<br>
+            – 보존근거: 불량 이용자의 재가입 방지, 명예훼손 등 권리침해 분쟁 및 수사협조<br>
+            – 보존기간: 회원탈퇴 후 1년</p>
+          <p>2. 상법, 전자상거래등에서의소비자보호에관한법률 등 관계법령의 규정에 의하여 보존할 필요가 있는 경우 회사는 관계법령에서 정한 일정한 기간 동안 회원정보를 보관합니다. 이 경우 회사는 보관하는
+            정보를 그 보관의 목적으로만 이용하며 보존기간은 아래와 같습니다.<br>
+            – 계약 또는 청약철회 등에 관한 기록 (보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존 기간 : 5년)<br>
+            – 대금결제 및 재화 등의 공급에 관한 기록 (보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존 기간 : 5년)<br>
+            – 소비자의 불만 또는 분쟁처리에 관한 기록 (보존 이유 : 전자상거래 등에서의 소비자보호에 관한 법률 / 보존 기간 : 3년)<br>
+            – 방문에 관한 기록 (보존 이유 : 통신비밀보호법 / 보전 기간 : 3개월)</p>
+
+          <h5>제 4 장 정보의 제공 및 영리목적 광고 전송</h5>
+          <p>회사 회원이 서비스 이용 중 필요하다고 인정되는 다양한 정보에 대해서는 전화, SMS, PUSH 등의 다양한 방법으로 회원에게 제공할 수 있습니다. 단, 수취를 거부한 회원에게는 제공하지
+            않습니다. 간편회원가입, 회원가입 및 이벤트 신청으로 접수된 회원은 영리목적 광고성 정보가 전화, SMS, PUSH로 제공 될 수 있습니다. 단, 수취를 거부한 회원에게는 제공하지 않습니다.
+          </p>
+
+          <h5>제 5 장 개인정보의 제3자 제공</h5>
+          <p>회사는 정보주체의 개인정보를 이용목적 내에서만 처리하며, 정보 주체의 동의, 법률의 특별한 규정이 있는 경우에만 개인정보를 제3자에게 제공합니다. 회사는 다음과 같이 개인정보를 제3자에게
+            제공하고 있습니다.<br>
+            1. 제공하는 개인정보 항목 : 성함, 연락처<br>
+            2. 제공받는 자의 개인정보 이용목적 :<br>
+            - 서비스 제공에 관한 이행 및 서비스 제공에 따른 콘텐츠제공<br>
+            - 고객을 대상으로 제품 상담 응대 및 판매 서비스 제공에 관한 계약 이행 및 서비스 제공에 따른 상담, 요금정산, 구매 및 요금결제, 구매내역, 물품배송 또는 청구지 등 발송<br>
+            - 회원 관리 : 회원제 서비스 이용에 따른 본인확인 , 개인 식별 , 불량회원의 부정 이용 방지와 비인가 사용 방지 , 구매 의사 확인 , 연령확인 , 만14세 미만 아동 개인정보 수집 시
+            법정 대리인 동의여부 확인 , 불만처리 등 민원처리 , 고지사항 전달, 입사 지원에 따른 본인 확인, 제휴신청 업체 정보 확인<br>
+            - 마케팅 및 광고에 활용 : 신규 서비스(제품) 개발 및 특화 , 이벤트 등 광고성 정보 전달 , 인구통계학적 특성에 따른 서비스 제공 및 광고 게재 , 접속 빈도 파악 또는 회원의 서비스
+            이용에 대한 통계<br>
+            3. 제공하는 개인정보 항목 : 이름, 나이, 연락처, 주소, 이메일<br>
+            4. 제공받는 자의 보유 이용기간 : 5년(소비자의 불만 또는 분쟁처리에 관한 기록 : 3년)<br>
+            5. 고객은 제3자 개인정보 제공에 대하여 동의를 거부할 권리가 있으며 동의를 거부할 경우 서비스 제공 및 서비스 제공에 따른 콘텐츠 제공에 제한이 있을 수 있습니다.</p>
+
+          <h5>제 6 장 개인정보의 제공 및 공유</h5>
+          <p>원칙적으로 회사는 회원님의 개인정보를 수집 및 이용목적에 한해서만 이용하며 타인 또는 타기업/기관에 공개하지 않습니다. 다만, 아래와 같은 경우에는 예외로 합니다.<br>
+            1. 이용자들이 사전에 동의한 경우 (정보수집 또는 정보제공 이전에 회원님께 비즈니스 파트너가 누구인지, 어떤 정보가 왜 필요한지, 그리고 언제까지 어떻게 보호/관리되는지 알려드리고 동의를
+            구하는 절차를 거치게 되며, 회원님께서 동의하지 않는 경우에는 추가적인 정보를 수집하거나 비즈니스 파트너와 공유하지 않습니다.)<br>
+            2. 법령의 규정에 의거하거나, 수사 목적으로 법령에 정해진 절차와 방법에 따라 수사기관의 요구가 있는 경우<br>
+            3. 이용목적에 부합하는 개인정보의 이용 및 제공 (도메인 이름 등록/도메인 이름에 대한 WHOIS 서비스/분쟁 조정 기구 및 법원 요청/ICANN 계약에 따른 해외 에스크로 업체 위탁
+            보관/정부기관 요청 등)</p>
+
+          <h5>제 7 장 수집한 개인정보의 위탁</h5>
+          <p>회사는 서비스 향상을 위해서 아래와 같이 개인정보를 위탁하고 있으며, 관계 법령에 따라 위탁계약 시 개인정보가 안전하게 관리될 수 있도록 필요한 사항을 규정하고 있습니다.</p>
+
+          <h5>제 8 장 개인정보 자동 수집 장치의 설치, 운영 및 거부에 관한 사항</h5>
+          <p>회원님 개개인에게 개인화되고 맞춤화된 서비스를 제공하기 위해서 회사는 회원님의 정보를 저장하고 수시로 불러오는 ‘쿠키(cookie)’를 사용합니다.</p>
+          <p>1. 쿠키의 사용 목적 : 회원과 비회원의 접속 빈도나 방문 시간 등을 분석, 이용자의 취향과 관심분야를 파악 및 자취 추적, 각종 이벤트 참여 정도 및 방문 회수 파악 등을 통한 타겟 마케팅
+            및 개인 맞춤 서비스 제공</p>
+          <p>2. 쿠키 설정 거부 방법 : 웹브라우저에서 옵션을 설정함으로써 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. (설정방법 예: 도구
+            > 인터넷 옵션 > 개인정보. 단, 쿠키 설치를 거부하였을 경우 로그인이 필요한 일부 서비스의 이용이 어려울 수 있습니다.)</p>
+
+          <h5>제 9 장 개인정보보호를 위한 기술적/관리적 대책</h5>
+          <p><strong>[ 기술적인 대책 ]</strong><br>
+            1. 회원 개개인의 개인정보는 비밀번호에 의해 보호되며, 개인정보 데이터는 별도의 보안기능을 통해 보호 되고 있습니다.<br>
+            2. 회원 개개인의 비밀번호는 이용자 및 개인정보취급자가 생일, 전화번호 등 추측하기 쉬운 숫자를 비밀번호로 이용하지 않도록 패스워드 작성 규칙을 수립하고 이행합니다.<br>
+            3. 회사는 백신 프로그램 및 악성코드 방어 소프트웨어를 이용하여 컴퓨터 바이러스에 의한 피해를 방지하고 있으며, 해당 소프트웨어는 매일 주기적으로 업데이트하고 있습니다.<br>
+            4. 회사는 침입차단 기능과 침입탐지 기능을 탑재하고 있는 고가의 라우터와 L3 스위치 장비를 사용하여 이중으로 네트워크 상의 개인정보를 안전하게 보호하고 있습니다.<br>
+            5. 회사는 또한 별도의 침입차단시스템(Firewall)을 구축하여 3중 개인정보보호시스템을 운영하고 있습니다.<br>
+            6. 회사는 개인정보를 개인정보보호시스템에 암호화하여 저장하고 있으며, 회사의 정보통신망 외부로 개인정보를 송신하거나 PC에 저장할 경우 암호화하여 저장하도록 시스템을 운영하고 있습니다.</p>
+          <p><strong>[ 관리적인 대책 ]</strong><br>
+            1. 위와 같은 노력 이외에 회원님 스스로도 제3자에게 비밀번호 등이 노출되지 않도록 주의하셔야 합니다. 특히 비밀번호 등이 공공장소에 설치한 PC를 통해 유출되지 않도록 항상 유의하시기
+            바랍니다.<br>
+            2. 회사는 회사 규정에 별도의 전산관리규정을 마련하여 개인정보 조칙의 구성/운영, 개인정보취급자의 교육, 접속 기록 유지 및 정기적인 확인 감독, 출력 및 복사 시의 보호조치 등을
+            준수하겠습니다.</p>
+
+          <h5>제 10 장 이용자 및 법정대리인의 권리와 그 행사방법</h5>
+          <p>– 이용자 및 법정 대리인은 언제든지 등록되어 있는 자신의 개인정보를 조회하거나 수정할 수 있으며 가입해지를 요청할 수도 있습니다.<br>
+            – 혹은 개인정보관리책임자에게 서면, 전화 또는 이메일로 연락하시면 지체없이 조치하겠습니다.<br>
+            – 아동의 회원 가입 및 미성년자 거래 시의 대리인 동의, 철회 권리를 완전히 보장합니다.</p>
+
+          <h5>제 11 장 개인정보관리책임자 및 상담, 신고</h5>
+          <p>고객의 개인정보를 보호하고 개인정보와 관련한 불만을 처리하기 위하여 회사는 개인정보관리책임자를 두고 있습니다.<br>
+            – 개인분쟁조정위원회 (www.1336.or.kr / 1336)<br>
+            – 정보보호마크인증위원회 (www.eprivacy.or.kr / 02-580-0533~4)<br>
+            – 대검찰청 인터넷범죄수사센터 (http://icic.sppo.go.kr / 02-3480-3600)<br>
+            – 경찰청 사이버테러대응센터 (www.ctrc.go.kr / 02-392-0330)</p>
+
+          <h5>제 12 장 고지</h5>
+          <p>법령, 정책 또는 보안기술의 변경에 따라 내용의 추가, 삭제 및 수정이 있을 시에는 변경사항 시행일의 7일전부터 회사 사이트의 공지사항을 통하여 고지합니다.</p>
+          <p><strong>부칙1. (시행일)</strong> 본 개인정보취급방침은 2025년 7월 1일부터 시행합니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%- include('../partials/footer') %>

@@ -1,0 +1,308 @@
+/* ==========================================
+   Moodcar Global Design System & Variables
+   ========================================== */
+
+:root {
+  /* 테마 컬러 (트렌디한 딥 청록 - Teal & 소프트 웜 그레이) */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa; /* 밝은 소프트 그레이 */
+  --bg-tertiary: #f1f4f3; /* 살짝 청록빛이 섞인 밝은 웜그레이 */
+  
+  /* 텍스트 컬러 */
+  --text-primary: #0f172a; /* 딥 슬레이트 블랙 */
+  --text-secondary: #475569; /* 슬레이트 그레이 */
+  --text-muted: #94a3b8;
+  
+  /* 딥 청록 (Teal) 디자인 시스템 */
+  --accent-color: #0d9488; /* 세련된 메인 틸 */
+  --accent-secondary: #0f766e; /* 딥 틸 */
+  
+  /* 액센트 그라데이션 및 네온 효과 */
+  --accent-gradient: linear-gradient(135deg, #0d9488 0%, #047857 100%);
+  --accent-glow: 0 4px 15px rgba(13, 148, 136, 0.2);
+  
+  /* 시스템 상태 */
+  --error: #ef4444;
+  --success: #10b981;
+  
+  /* 폰트 정의 */
+  --font-sans: 'Outfit', 'Noto Sans KR', sans-serif;
+  
+  /* 레이아웃 & 애니메이션 */
+  --max-width: 1200px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --header-height: 80px;
+}
+
+/* ==========================================
+   CSS Reset
+   ========================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ==========================================
+   공통 타이포그래피 & 유틸리티
+   ========================================== */
+
+.gradient-text {
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* 버튼 컴포넌트 (트렌디 틸 스타일) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-gradient);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 50px;
+  box-shadow: var(--accent-glow);
+  transition: var(--transition-smooth);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.4);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(13, 148, 136, 0.05);
+  color: var(--accent-color);
+  font-weight: 500;
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: 1px solid rgba(13, 148, 136, 0.15);
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  background: rgba(13, 148, 136, 0.1);
+  border-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   글로벌 레이아웃 (Header)
+   ========================================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(13, 148, 136, 0.06);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  transition: var(--transition-smooth);
+}
+
+.header-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.05));
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.nav-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-btn {
+  background: var(--accent-gradient);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: var(--accent-glow);
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(13, 148, 136, 0.35);
+}
+
+.main-content {
+  margin-top: var(--header-height);
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ==========================================
+   글로벌 레이아웃 (Footer)
+   ========================================== */
+
+.footer {
+  background-color: #1e1e1e; /* 짙은 검정 회색으로 개편 */
+  color: rgba(255, 255, 255, 0.7);
+  padding: 50px 24px;
+  font-size: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+}
+
+.footer-business-info {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+.footer-business-info p {
+  margin-bottom: 4px;
+}
+
+.footer-business-info p:last-child {
+  margin-bottom: 0;
+}
+
+.footer-business-info span {
+  display: inline-block;
+}
+
+.footer-business-info strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.footer-business-info .divider {
+  margin: 0 10px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.footer-copyright-area {
+  margin-top: 4px;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.85rem;
+}
+
+.footer-partnership-info {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  line-height: 1.8;
+}
+
+.footer-partnership-info p {
+  margin-bottom: 4px;
+}
+
+.footer-partnership-info p:last-child {
+  margin-bottom: 0;
+}
+
+.partnership-notice {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================
+   반응형 브레이크포인트
+   ========================================== */
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 16px;
+  }
+  
+  .nav-menu {
+    display: none;
+  }
+  
+  .footer-container {
+    gap: 20px;
+  }
+
+  .footer-business-info .divider {
+    display: none;
+  }
+  
+  .footer-business-info span {
+    display: block;
+    margin-bottom: 2px;
+  }
+}
